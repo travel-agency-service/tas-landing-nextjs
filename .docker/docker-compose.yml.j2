@@ -1,0 +1,15 @@
+services:
+  tas-landing:
+    image: {{ image }}
+    build: .
+    ports:
+      - "3001:3000"
+
+    restart: unless-stopped
+    networks:
+      - nginx-public
+
+networks:
+  nginx-public:
+    external: true
+
