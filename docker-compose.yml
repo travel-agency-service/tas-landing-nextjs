@@ -1,6 +1,6 @@
 services:
   tas-landing:
-    image: ghcr.io/travel-agency-service/tas-landing-nextjs:v0.2.0-2024-08-19-23-21-40
+    image: ghcr.io/travel-agency-service/tas-landing-nextjs:v0.1.0-2024-08-20-18-00-13
     build: .
     ports:
       - "3001:3000"
@@ -12,3 +12,4 @@ services:
 networks:
   nginx-public:
     external: true
+
