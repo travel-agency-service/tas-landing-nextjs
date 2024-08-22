@@ -46,9 +46,9 @@ export const BenefitsSection = () => {
             Your Shortcut to Success
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non
-            ducimus reprehenderit architecto rerum similique facere odit
-            deleniti necessitatibus quo quae.
+            Our mission is to revolutionize the visa application process by providing innovative, AI-driven
+            solutions that identify the best countries, universities, and visa options, enhancing
+            the efficiency and success rate for travel agencies and their clients.
           </p>
         </div>
 
