@@ -1,14 +1,22 @@
 describe("recorded test", () => {
-  it("this is for testing login flow in tas project", () => {
-    cy.visit("https://panel.hobs.ai/signin/"); //visit the landing page
-    /* ==== Generated with Cypress Studio ==== */
-    cy.get('#\\:R1dpuura\\:-form-item').clear('m');
-    cy.get('#\\:R1dpuura\\:-form-item').type('mahooresorkh@gmail.com');
-    cy.get('#\\:R2dpuura\\:-form-item').clear();
-    cy.get('#\\:R2dpuura\\:-form-item').type('@345Wert');
-    cy.get('.inline-flex').click();
-    cy.get('#\\:R1dpuura\\:-form-item').clear('mahooresorkh@gmail.com');
-    cy.get('#\\:R1dpuura\\:-form-item').type('mahooresorkh@test.ir');
-    /* ==== End Cypress Studio ==== */
+  let testData;
+
+  // Load fixture data before any tests run
+  before(async () => {
+    const data = await cy.fixture("params");
+    testData = data;
+  });
+
+  it(`this is for testing login flow`, () => {
+    cy.visit("https://panel.hobs.ai/signin/"); // visit the landing page
+    cy.request(
+      `https://jsonplaceholder.typicode.com/todos/${testData.id}`
+    ).then((response) => {
+      const json = response.body; // Access the response body directly
+
+      cy.get("#\\:R1d9uura\\:-form-item").clear().type("test@test.com");
+      cy.get("#\\:R2d9uura\\:-form-item").clear().type(json.title);
+      cy.get(".inline-flex").click();
+    });
   });
 });
