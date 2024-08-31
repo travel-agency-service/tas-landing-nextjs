@@ -6,5 +6,7 @@ export default defineConfig({
       // implement node event listeners here
     },
     experimentalStudio: true,
+    defaultCommandTimeout: 5000, //wait for any .get or other commands to pass
+    chromeWebSecurity: false, // this is for clicking on a capthca checkbox through an iframe
   },
 });
